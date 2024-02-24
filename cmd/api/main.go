@@ -12,14 +12,6 @@ import (
 	"go_game_api.com/internal/data"
 )
 
-const (
-	dbHost     = "localhost"
-	dbPort     = 5432
-	dbUser     = "admin"
-	dbPassword = "12345"
-	dbName     = "game-api"
-)
-
 type application struct {
 	models data.Models
 	logger *log.Logger
@@ -30,17 +22,15 @@ func main() {
 
 	flag.Parse()
 
-	// var databasePass string
-	// databasePass = os.Getenv("GAME_DB_CONNECTION")
-	// fmt.Printf("Database: %s\n", databasePass)
-
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		dbHost, dbPort, dbUser, dbPassword, dbName)
-
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 
-	db, err := openDB(psqlInfo)
+	databaseConnectionString := os.Getenv("GAME_DB_CONNECTION")
+
+	if databaseConnectionString == "" {
+		logger.Fatal("DB Connection string missing")
+	}
+
+	db, err := openDB(databaseConnectionString)
 
 	if err != nil {
 		logger.Fatal(err)

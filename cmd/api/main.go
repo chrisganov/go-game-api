@@ -47,7 +47,7 @@ func main() {
 	}
 
 	srv := &http.Server{
-		Addr:    fmt.Sprintf("localhost:%s", port),
+		Addr:    fmt.Sprintf("0.0.0.0:%s", port),
 		Handler: app.routes(),
 	}
 

@@ -1,4 +1,4 @@
-export ENV := test
+export PORT = 8080
 export GAME_DB_HOST := localhost
 export GAME_DB_PORT := 5432
 export GAME_DB_USER := admin

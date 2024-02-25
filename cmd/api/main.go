@@ -18,13 +18,16 @@ type application struct {
 }
 
 func main() {
-	addr := flag.String("addr", ":8080", "Port of the application")
-
 	flag.Parse()
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 
+	port := os.Getenv("PORT")
 	databaseConnectionString := os.Getenv("GAME_DB_CONNECTION")
+
+  if port == "" {
+    logger.Fatal("Port is missing")
+  }
 
 	if databaseConnectionString == "" {
 		logger.Fatal("DB Connection string missing")
@@ -44,11 +47,11 @@ func main() {
 	}
 
 	srv := &http.Server{
-		Addr:    fmt.Sprintf("localhost%s", *addr),
+		Addr:    fmt.Sprintf("localhost:%s", port),
 		Handler: app.routes(),
 	}
 
-	logger.Printf("Starting server on %s", *addr)
+	logger.Printf("Starting server on %s", port)
 
 	err = srv.ListenAndServe()
 	logger.Fatal(err)

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"go_game_api.com/pkg/utils"
+	"github.com/chrisganov/go-game-api/pkg/utils"
 )
 
 type envelope map[string]interface{}

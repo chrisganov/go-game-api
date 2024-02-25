@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"go_game_api.com/pkg/utils"
+	"github.com/chrisganov/go-game-api/pkg/utils"
 )
 
 func (app *application) healthcheckHandler(w http.ResponseWriter, r *http.Request) {

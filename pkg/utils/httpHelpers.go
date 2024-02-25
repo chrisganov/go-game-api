@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	validator "go_game_api.com/internal/validators"
+	validator "github.com/chrisganov/go-game-api/internal/validators"
 )
 
 func ReadJSON(w http.ResponseWriter, r *http.Request, dst interface{}) error { // Decode the request body into the target destination.

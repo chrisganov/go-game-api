@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	validator "go_game_api.com/internal/validators"
-	"go_game_api.com/pkg/utils"
+	validator "github.com/chrisganov/go-game-api/internal/validators"
+	"github.com/chrisganov/go-game-api/pkg/utils"
 )
 
 type scoreLevel string

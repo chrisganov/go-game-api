@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/chrisganov/go-game-api/internal/data"
+	validator "github.com/chrisganov/go-game-api/internal/validators"
+	"github.com/chrisganov/go-game-api/pkg/utils"
 	"github.com/go-chi/chi/v5"
-	"go_game_api.com/internal/data"
-	validator "go_game_api.com/internal/validators"
-	"go_game_api.com/pkg/utils"
 )
 
 // GET ALL USERS

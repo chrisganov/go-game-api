@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/chrisganov/go-game-api/internal/data"
 	_ "github.com/lib/pq"
-	"go_game_api.com/internal/data"
 )
 
 type application struct {

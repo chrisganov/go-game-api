@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	validator "go_game_api.com/internal/validators"
+	validator "github.com/chrisganov/go-game-api/internal/validators"
 )
 
 type userRole string
